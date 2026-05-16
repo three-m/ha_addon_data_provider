@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿@inject IHttpContextAccessor HttpContextAccessor
+@{
+    var basePath = HttpContextAccessor.HttpContext?.Items["IngressBasePath"] as string ?? "/";
+}
+
+<base href="@basePath" />
+
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
